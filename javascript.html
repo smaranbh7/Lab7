@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lab 7</title>
+</head>
+<body>
+<script>
+function findLargestNumber(numbers) {
+let largestNumber = numbers[0];
+for (let i = 1; i < numbers.length; i++) {
+if (numbers[i] > largestNumber) {
+largestNumber = numbers[i];
+}
+}
+return largestNumber;
+}
+
+let numbers = [1, 5, 3, 9, 2, 6];
+let largestNumber = findLargestNumber(numbers);
+console.log(largestNumber);
+
+let xhr = new XMLHttpRequest();
+xhr.open("GET", "https://jsonplaceholder.typicode.com/todos/1");
+xhr.send();
+
+xhr.onload = function() {
+if (xhr.status == 200) {
+console.log(xhr.responseText);
+} else {
+console.log("Error: " + xhr.status);
+}
+};
+</script>
+</body>
+</html>
